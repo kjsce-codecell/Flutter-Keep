@@ -18,6 +18,19 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   NoteManager noteManager = NoteManager();
+  void onClickNote(int noteId) {
+    Note? selectedNote = noteManager.getNoteFromId(noteId);
+    if (selectedNote == null) return;
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => EditNote(
+          isNew: true,
+          selectedNote: selectedNote,
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +60,7 @@ class _HomeState extends State<Home> {
                 Note currentNote = noteManager.notesList[index];
                 return NoteCard(
                   noteData: currentNote,
+                  onClick: onClickNote,
                 );
               })),
       floatingActionButton: FloatingActionButton(

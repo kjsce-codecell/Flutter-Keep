@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutterkeep/constants.dart';
+import 'package:flutterkeep/helpers/note.dart';
 import 'package:flutterkeep/widgets/bottom_button.dart';
 import 'package:flutterkeep/widgets/color_container.dart';
 
 class EditNote extends StatefulWidget {
   bool isNew;
-  EditNote({super.key, required this.isNew});
+  Note? selectedNote;
+  EditNote({super.key, required this.isNew, this.selectedNote});
   @override
   State<EditNote> createState() => _EditNoteState();
 }
@@ -15,6 +17,18 @@ class _EditNoteState extends State<EditNote> {
   String note = '';
   String dateToday = DateTime.now().toString().substring(0, 10);
   int selectedColorIndex = 0; // Default background color selected for note.
+  @override
+  void initState() {
+    super.initState();
+    if (widget.isNew) {
+      for (var i = 0; i < kBackgroundColors.length; i++) {
+        if (widget.selectedNote?.backgroundColor == kBackgroundColors[i]) {
+          selectedColorIndex = i;
+        }
+      }
+    }
+  }
+
   void updateBackgroundColorOnClick(int colorIndex) {
     setState(() {
       selectedColorIndex = colorIndex;
@@ -51,6 +65,8 @@ class _EditNoteState extends State<EditNote> {
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 30, 20, 20),
               child: TextField(
+                controller: TextEditingController(
+                    text: widget.isNew ? widget.selectedNote?.title : ''),
                 style: TextStyle(color: Color(kTextColors[selectedColorIndex])),
                 decoration: kInputFieldDecoration,
                 onChanged: (value) {
@@ -61,6 +77,8 @@ class _EditNoteState extends State<EditNote> {
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
               child: TextField(
+                controller: TextEditingController(
+                    text: widget.isNew ? widget.selectedNote?.note : ''),
                 onChanged: (String value) {
                   note = value;
                 },
