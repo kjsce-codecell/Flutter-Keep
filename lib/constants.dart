@@ -29,5 +29,71 @@ const kTitleTextStyle = TextStyle(
 );
 
 // Below are colors lists for note
-List<int> kBackgroundColors = [0xFFF57513, 0xFFADD8E6];
-List<int> kTextColors = [0xFF286D8B, 0xFFFAC2A7];
+List<int> kBackgroundColors = [
+  0xFF000000,
+  0xFFFFFFFF,
+  0xFFffe4c4,
+  0xFFefdecd,
+  0xFFddadaf,
+  0xFF98fb98,
+  0xFFd8bfd8,
+  0xFFdda0dd,
+  0xFFcfb53b,
+];
+List<int> kTextColors = [
+  0xFFFFFFFF,
+  0xFF000000,
+  0xFF286D8B,
+  0xFF000000,
+  0xFF000000,
+  0xFF000000,
+  0xFF000000,
+  0xFF000000,
+  0xFFFFFFFF,
+];
+
+// hint/placeholder text style for inputs
+const kHintTextStyle = TextStyle(
+  color: Colors.grey,
+  fontSize: 16,
+);
+// Input title text style
+const kInputFieldDecoration = InputDecoration(
+  filled: true,
+  // icon: Icon(
+  //   Icons.title_rounded,
+  //   color: Colors.white,
+  // ),
+  contentPadding: EdgeInsets.all(10),
+  hintText: 'Enter Title',
+  hintStyle: kHintTextStyle,
+  border: OutlineInputBorder(
+    borderRadius: BorderRadius.all(
+      Radius.circular(5),
+    ),
+    borderSide: BorderSide.none,
+  ),
+);
+
+// Input note text style
+const kNoteInputFieldDecoration = InputDecoration(
+  filled: true,
+  hintText: 'Enter Note',
+  hintStyle: kHintTextStyle,
+  border: OutlineInputBorder(
+    borderRadius: BorderRadius.all(
+      Radius.circular(5),
+    ),
+    borderSide: BorderSide.none,
+  ),
+);
+
+// Button height
+const kBottomContainerHeight = 25.0;
+
+// Button text Style
+const kButtonTextStyle = TextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.bold,
+  color: Colors.white,
+);

@@ -110,4 +110,20 @@ class NoteManager {
       date: "26/9/2022",
     ),
   ];
+
+  void addNewNote(
+      {required String title,
+      required String note,
+      required int backgroundColor,
+      required int textColor,
+      required String date}) {
+    notesList.add(Note(
+      title: title,
+      note: note,
+      date: date,
+      id: (notesList.length + 1),
+      textColor: textColor,
+      backgroundColor: backgroundColor,
+    ));
+  }
 }
