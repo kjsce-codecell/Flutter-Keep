@@ -62,4 +62,30 @@ class NoteManager {
     }
     return null;
   }
+
+  void upateNoteFromId(
+      {required String title,
+      required String note,
+      required int backgroundColor,
+      required int textColor,
+      required String date,
+      required int id}) {
+    for (var currentNote in notesList) {
+      if (currentNote.id == id) {
+        currentNote.title = title;
+        currentNote.note = note;
+        currentNote.date = date;
+        currentNote.backgroundColor = backgroundColor;
+        currentNote.textColor = textColor;
+        return;
+      }
+    }
+  }
+
+  void deleteNoteFromId(int noteId) {
+    for (int index = 0; index < notesList.length; index++) {
+      if (notesList[index].id == noteId) notesList.removeAt(index);
+    }
+    return;
+  }
 }

@@ -20,12 +20,14 @@ class _EditNoteState extends State<EditNote> {
   @override
   void initState() {
     super.initState();
-    if (widget.isNew) {
+    if (widget.isNew == false) {
       for (var i = 0; i < kBackgroundColors.length; i++) {
         if (widget.selectedNote?.backgroundColor == kBackgroundColors[i]) {
           selectedColorIndex = i;
         }
       }
+      title = widget.selectedNote?.title ?? '';
+      note = widget.selectedNote?.note ?? '';
     }
   }
 
@@ -65,10 +67,14 @@ class _EditNoteState extends State<EditNote> {
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 30, 20, 20),
               child: TextField(
+                keyboardType: TextInputType.multiline,
+                maxLines: null,
                 controller: TextEditingController(
-                    text: widget.isNew ? widget.selectedNote?.title : ''),
+                    text: widget.isNew ? title : widget.selectedNote?.title),
                 style: TextStyle(color: Color(kTextColors[selectedColorIndex])),
-                decoration: kInputFieldDecoration,
+                decoration: kInputFieldDecoration.copyWith(
+                    fillColor: Color(kTextColors[selectedColorIndex])
+                        .withOpacity(0.15)),
                 onChanged: (value) {
                   title = value;
                 },
@@ -78,7 +84,7 @@ class _EditNoteState extends State<EditNote> {
               padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
               child: TextField(
                 controller: TextEditingController(
-                    text: widget.isNew ? widget.selectedNote?.note : ''),
+                    text: widget.isNew ? note : widget.selectedNote?.note),
                 onChanged: (String value) {
                   note = value;
                 },
@@ -86,7 +92,9 @@ class _EditNoteState extends State<EditNote> {
                 style: TextStyle(color: Color(kTextColors[selectedColorIndex])),
                 minLines: 10,
                 maxLines: null,
-                decoration: kNoteInputFieldDecoration,
+                decoration: kNoteInputFieldDecoration.copyWith(
+                    fillColor: Color(kTextColors[selectedColorIndex])
+                        .withOpacity(0.15)),
               ),
             ),
             const Padding(
@@ -107,27 +115,29 @@ class _EditNoteState extends State<EditNote> {
             ),
             Padding(
               padding: const EdgeInsets.all(20.0),
-              child: TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: kSecondaryColor,
-                  textStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                onPressed: () {},
-                child: BottomButton(
-                  text: widget.isNew ? 'Add' : 'Update',
-                  onClick: () {
-                    Navigator.pop(context, {
-                      "title": title,
-                      "note": note,
-                      "colorIndex": selectedColorIndex,
-                      "date": dateToday
-                    });
-                  },
-                ),
+              child: BottomButton(
+                backgroundColor: kSecondaryColor,
+                text: widget.isNew ? 'Add' : 'Update',
+                onClick: () {
+                  Navigator.pop(context, {
+                    "title": title,
+                    "note": note,
+                    "colorIndex": selectedColorIndex,
+                    "date": dateToday,
+                    "id": widget.selectedNote?.id,
+                  });
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
+              child: BottomButton(
+                backgroundColor: Colors.red,
+                text: widget.isNew ? 'Remove' : 'Delete',
+                onClick: () {
+                  Navigator.pop(context,
+                      {"isDelete": true, "id": widget.selectedNote?.id});
+                },
               ),
             ),
           ],

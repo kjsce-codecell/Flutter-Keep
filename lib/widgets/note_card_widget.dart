@@ -5,12 +5,12 @@ import 'package:flutterkeep/helpers/note.dart';
 class NoteCard extends StatelessWidget {
   final Note noteData;
   final Function onClick;
-  NoteCard({super.key, required this.noteData, required this.onClick});
+  const NoteCard({super.key, required this.noteData, required this.onClick});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => onClick(noteData.id),
+      onTap: () async => await onClick(noteData.id),
       child: Card(
         color: Color(noteData.backgroundColor),
         shape: RoundedRectangleBorder(

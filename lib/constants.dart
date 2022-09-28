@@ -89,7 +89,7 @@ const kNoteInputFieldDecoration = InputDecoration(
 );
 
 // Button height
-const kBottomContainerHeight = 25.0;
+const kBottomContainerHeight = 50.0;
 
 // Button text Style
 const kButtonTextStyle = TextStyle(

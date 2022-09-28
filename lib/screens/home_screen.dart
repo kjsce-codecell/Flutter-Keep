@@ -18,18 +18,33 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   NoteManager noteManager = NoteManager();
-  void onClickNote(int noteId) {
+  void onClickNote(int noteId) async {
     Note? selectedNote = noteManager.getNoteFromId(noteId);
     if (selectedNote == null) return;
-    Navigator.push(
+    var updatedNote = await Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) => EditNote(
-          isNew: true,
+          isNew: false,
           selectedNote: selectedNote,
         ),
       ),
     );
+    if (updatedNote != null) {
+      setState(() {
+        if (updatedNote['isDelete'] == true) {
+          noteManager.deleteNoteFromId(updatedNote['id']);
+          return;
+        }
+        noteManager.upateNoteFromId(
+            title: updatedNote['title'],
+            note: updatedNote['note'],
+            backgroundColor: kBackgroundColors[updatedNote['colorIndex']],
+            textColor: kTextColors[updatedNote['colorIndex']],
+            date: updatedNote['date'],
+            id: updatedNote['id']);
+      });
+    }
   }
 
   @override
@@ -75,6 +90,7 @@ class _HomeState extends State<Home> {
           );
           if (newNoteData != null) {
             setState(() {
+              if (newNoteData['isDelete'] == true) return;
               noteManager.addNewNote(
                   title: newNoteData['title'],
                   note: newNoteData['note'],
