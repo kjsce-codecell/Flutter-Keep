@@ -1,1 +1,89 @@
-# Flutter Keep
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="./Flutter Keep Icon.png" alt="Project logo"></a>
+</p>
+
+<h1 align="center">Flutter Keep</h1>
+
+<div align="center">
+
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kjsce-codecell/Flutter-Keep/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kjsce-codecell/Flutter-Keep/pulls)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+
+</div>
+
+---
+
+<p align="center"> This is a open source Notes Flutter app.
+</p>
+
+## 📝 Table of Contents
+
+- [About](#about)
+- [Getting Started](#getting_started)
+- [Deployment](#deployment)
+- [Usage](#usage)
+- [Built Using](#built_using)
+- [TODO](../TODO.md)
+- [Contributing](../CONTRIBUTING.md)
+- [Authors](#authors)
+- [Acknowledgments](#acknowledgement)
+
+## 🧐 About <a name = "about"></a>
+
+"**Flutter Keep**" is an open-source flutter app that can save, update and delete your notes for free and offline. This project was made using flutter for app creation and sqflite for database storage.
+
+## 🏁 Getting Started <a name = "getting_started"></a>
+
+### Prerequisites
+
+- Flutter
+- sqlflite
+
+  To start you don't need to master this technologies, even if you are beginner feel free to go through and contribute.
+
+### Installing
+
+To install this project repository directly click on above _Code_ and download zip file or clone this repository using git.
+
+```bash
+git clone https://github.com/kjsce-codecell/Flutter-Keep.git
+```
+
+## 🎈 Usage <a name="usage"></a>
+
+To run flutter app.
+
+```bash
+flutter run
+```
+
+To download and use app [Click here]()
+
+## 🚀 Deployment <a name = "deployment"></a>
+
+The app is not yet deployed anywhere but you can [Download]() from here and feel free to give suggestions.
+
+## ⛏️ Built Using <a name = "built_using"></a>
+
+- [Flutter](https://docs.flutter.dev/) - It is used to develop cross platform applications for Android, iOS, Linux, macOS, Windows, Google Fuchsia, and the web from a single codebase
+- [Sqflite](https://github.com/tekartik/sqflite/tree/master/sqflite) - Database Storage for android
+
+## ✍️ Authors <a name = "authors"></a>
+
+- [@VinayKanse](https://github.com/VinayKanase)
+
+See also the list of [contributors](https://github.com/kjsce-codecell/Flutter-Keep/contributors) who participated in this project.
+
+## 🎉 Acknowledgements <a name = "acknowledgement"></a>
+
+- Hat tip to anyone
+
+  - [@JayMalave](https://github.com/jaymalave)
+  - [@TanviDeshpande](https://github.com/Tanvi-15)
+
+- References
+  - [Flutter Docs](https://docs.flutter.dev/)
+  - [Icons8](https://icons8.com/) - Used logo for app icon
