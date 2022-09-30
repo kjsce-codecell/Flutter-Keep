@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 // secondary color
 const kSecondaryColor = Color(0xFF0B27B7);
-// const kSecondaryColor = Color(0xFFff0000);
+// const kSecondaryColor = Color(0xFF8F8FEF);
+// const kSecondaryColor = Color(0xFFFA4454);
 // Light Theme Data
 ThemeData kLightThemeData = ThemeData.light().copyWith(
   appBarTheme: const AppBarTheme(

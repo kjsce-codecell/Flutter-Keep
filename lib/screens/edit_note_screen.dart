@@ -162,7 +162,7 @@ class _EditNoteState extends State<EditNote> {
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
               child: BottomButton(
-                backgroundColor: Colors.red,
+                backgroundColor: const Color(0xFFFA4454),
                 text: widget.isNew ? 'Remove' : 'Delete',
                 onClick: () {
                   Navigator.pop(context,
