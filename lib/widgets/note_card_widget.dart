@@ -22,7 +22,9 @@ class NoteCard extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Text(
-                noteData.title,
+                noteData.title.length > 100
+                    ? '${noteData.title.substring(1, 100)}...'
+                    : noteData.title,
                 style: kTitleTextStyle.copyWith(
                   color: Color(noteData.textColor),
                 ),

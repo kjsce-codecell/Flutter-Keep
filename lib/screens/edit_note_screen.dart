@@ -17,6 +17,8 @@ class _EditNoteState extends State<EditNote> {
   String note = '';
   String dateToday = DateTime.now().toString().substring(0, 10);
   int selectedColorIndex = 0; // Default background color selected for note.
+  String errorTextTitle = '';
+  String errorTextNote = '';
   @override
   void initState() {
     super.initState();
@@ -73,8 +75,15 @@ class _EditNoteState extends State<EditNote> {
                     text: widget.isNew ? title : widget.selectedNote?.title),
                 style: TextStyle(color: Color(kTextColors[selectedColorIndex])),
                 decoration: kInputFieldDecoration.copyWith(
-                    fillColor: Color(kTextColors[selectedColorIndex])
-                        .withOpacity(0.15)),
+                  fillColor:
+                      Color(kTextColors[selectedColorIndex]).withOpacity(0.15),
+                  errorText: errorTextTitle,
+                  errorStyle: TextStyle(
+                      color: Color(kTextColors[selectedColorIndex]),
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      decoration: TextDecoration.underline),
+                ),
                 onChanged: (value) {
                   title = value;
                 },
@@ -93,8 +102,15 @@ class _EditNoteState extends State<EditNote> {
                 minLines: 10,
                 maxLines: null,
                 decoration: kNoteInputFieldDecoration.copyWith(
-                    fillColor: Color(kTextColors[selectedColorIndex])
-                        .withOpacity(0.15)),
+                  fillColor:
+                      Color(kTextColors[selectedColorIndex]).withOpacity(0.15),
+                  errorText: errorTextNote,
+                  errorStyle: TextStyle(
+                      color: Color(kTextColors[selectedColorIndex]),
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      decoration: TextDecoration.underline),
+                ),
               ),
             ),
             const Padding(
@@ -119,6 +135,20 @@ class _EditNoteState extends State<EditNote> {
                 backgroundColor: kSecondaryColor,
                 text: widget.isNew ? 'Add' : 'Update',
                 onClick: () {
+                  errorTextNote = '';
+                  errorTextNote = '';
+                  if (title.trim().isEmpty) {
+                    setState(() {
+                      errorTextTitle = 'Title cannot be empty';
+                    });
+                    return;
+                  }
+                  if (note.trim().isEmpty) {
+                    setState(() {
+                      errorTextNote = 'Note cannot be empty';
+                    });
+                    return;
+                  }
                   Navigator.pop(context, {
                     "title": title,
                     "note": note,
