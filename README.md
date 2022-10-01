@@ -61,16 +61,17 @@ To run flutter app.
 flutter run
 ```
 
-To download and use app [Click here]()
+To download and use app [Click here](https://drive.google.com/u/0/uc?id=1_1cYekxjycW2YcXmlBYgH1DFuMWCusRJ&export=download)
 
 ## 🚀 Deployment <a name = "deployment"></a>
 
-The app is not yet deployed anywhere but you can [Download]() from here and feel free to give suggestions.
+The app is not yet deployed anywhere but you can [Download](https://drive.google.com/u/0/uc?id=1_1cYekxjycW2YcXmlBYgH1DFuMWCusRJ&export=download) from here and feel free to give suggestions.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
 - [Flutter](https://docs.flutter.dev/) - It is used to develop cross platform applications for Android, iOS, Linux, macOS, Windows, Google Fuchsia, and the web from a single codebase
 - [Sqflite](https://github.com/tekartik/sqflite/tree/master/sqflite) - Database Storage for android
+- [Staggered grid view](https://pub.dev/packages/staggered_grid_view_flutter) - Used to create staggered grid view
 
 ## ✍️ Authors <a name = "authors"></a>
 
@@ -89,7 +90,6 @@ See also the list of [contributors](https://github.com/kjsce-codecell/Flutter-Ke
   - [Flutter Docs](https://docs.flutter.dev/)
   - [Icons8](https://icons8.com/) - Used logo for app icon
 
-
 ## 🤌 Contributing <a name=Contributers></a>
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are _**greatly appreciated**_.
@@ -103,7 +103,6 @@ Don't forget to give the _project a star_! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-
 ## 📖 License <a name=license></a>
-Distributed under the MIT License.
 
+Distributed under the MIT License.
