@@ -26,10 +26,8 @@
 - [Deployment](#deployment)
 - [Usage](#usage)
 - [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
+- [How to Contribute?](#-how-to-contribute--)
 - [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
 - [License](#license)
 
 ## 🧐 About <a name = "about"></a>
@@ -76,6 +74,7 @@ The app is not yet deployed anywhere but you can [Download](https://drive.google
 ## ✍️ Authors <a name = "authors"></a>
 
 - [@VinayKanse](https://github.com/VinayKanase)
+- [@dhruv2003](https://github.com/dhruv2003)
 
 See also the list of [contributors](https://github.com/kjsce-codecell/Flutter-Keep/contributors) who participated in this project.
 
@@ -90,7 +89,7 @@ See also the list of [contributors](https://github.com/kjsce-codecell/Flutter-Ke
   - [Flutter Docs](https://docs.flutter.dev/)
   - [Icons8](https://icons8.com/) - Used logo for app icon
 
-## 🤝 Contributing <a name=Contributers></a>
+## 🤝 How to Contribute ? <a name=Contributers></a>
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are _**greatly appreciated**_.
 
