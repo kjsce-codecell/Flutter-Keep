@@ -90,7 +90,7 @@ See also the list of [contributors](https://github.com/kjsce-codecell/Flutter-Ke
   - [Flutter Docs](https://docs.flutter.dev/)
   - [Icons8](https://icons8.com/) - Used logo for app icon
 
-## 🤌 Contributing <a name=Contributers></a>
+## 🤝 Contributing <a name=Contributers></a>
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are _**greatly appreciated**_.
 
