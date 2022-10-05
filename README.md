@@ -29,6 +29,7 @@
 - [How to Contribute?](#-how-to-contribute--)
 - [Authors](#authors)
 - [License](#license)
+- [Code Of Conduct](CODE_OF_CONDUCT.md)
 
 ## 🧐 About <a name = "about"></a>
 
